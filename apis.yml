@@ -1,0 +1,81 @@
+aid: azure-cosmos-db
+name: Azure Cosmos DB
+description: >-
+  Azure Cosmos DB is a fully managed, globally distributed, multi-model NoSQL
+  and relational database service from Microsoft Azure that supports document,
+  key-value, graph, column-family, and vector data models with turnkey global
+  distribution, elastic scale, and SLA-backed latency, throughput,
+  consistency, and availability. The Cosmos DB REST API exposes CRUD and
+  query operations on databases, containers, items, stored procedures,
+  triggers, and user-defined functions using master-key or resource-token
+  authentication, alongside the Cosmos DB Resource Provider (Azure Resource
+  Manager) using Microsoft Entra ID OAuth 2.0.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Database
+  - NoSQL
+  - Document Database
+  - Vector Database
+  - Globally Distributed
+  - Cloud
+  - Azure
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/azure-cosmos-db/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: azure-cosmos-db:data-plane-api
+    name: Azure Cosmos DB Data Plane REST API
+    description: >-
+      REST API for creating, querying, and managing databases, containers,
+      items, stored procedures, triggers, user-defined functions, users, and
+      permissions. Authentication uses master keys, resource tokens, or
+      Microsoft Entra ID bearer tokens with HMAC-signed authorization
+      headers.
+    humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+    baseURL: https://{databaseaccount}.documents.azure.com
+    tags:
+      - Cosmos DB
+      - NoSQL
+      - SQL API
+      - Documents
+      - Azure
+    properties:
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+      - type: Access Control
+        url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/access-control-on-cosmosdb-resources
+      - type: Resource URI Syntax
+        url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/cosmosdb-resource-uri-syntax-for-rest
+  - aid: azure-cosmos-db:resource-provider-api
+    name: Azure Cosmos DB Resource Provider API
+    description: >-
+      Azure Resource Manager REST API for managing Cosmos DB accounts,
+      databases, containers, throughput, backups, and role-based access at
+      the control-plane level. Authentication uses Microsoft Entra ID
+      OAuth 2.0 bearer tokens.
+    humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
+    baseURL: https://management.azure.com
+    tags:
+      - Cosmos DB
+      - Control Plane
+      - Resource Manager
+      - Azure
+    properties:
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
+
+common:
+  - type: Website
+    url: https://azure.microsoft.com/en-us/products/cosmos-db/
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/cosmos-db/
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/cosmos-db/
+  - type: Sign Up
+    url: https://azure.microsoft.com/en-us/free/cosmos-db/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
