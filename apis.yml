@@ -68,6 +68,10 @@ apis:
         url: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
 
 common:
+  - type: GitHubOrganization
+    url: https://github.com/AzureCosmosDB
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/azure-cosmos-db
   - type: Website
     url: https://azure.microsoft.com/en-us/products/cosmos-db/
   - type: Documentation
