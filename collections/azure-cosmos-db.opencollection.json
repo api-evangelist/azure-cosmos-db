@@ -1,0 +1,674 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Cosmos DB Data Plane REST API",
+    "version": "2018-12-31"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Databases",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List databases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List databases"
+        },
+        {
+          "info": {
+            "name": "Create a database",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a database"
+        },
+        {
+          "info": {
+            "name": "Get a database",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a database"
+        },
+        {
+          "info": {
+            "name": "Delete a database",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete a database"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List collections in a database",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List collections in a database"
+        },
+        {
+          "info": {
+            "name": "Create a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a collection"
+        },
+        {
+          "info": {
+            "name": "Get a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a collection"
+        },
+        {
+          "info": {
+            "name": "Delete a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete a collection"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List documents in a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/docs",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List documents in a collection"
+        },
+        {
+          "info": {
+            "name": "Create or query a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/docs",
+            "headers": [
+              {
+                "name": "x-ms-documentdb-isquery",
+                "value": ""
+              },
+              {
+                "name": "x-ms-documentdb-query-enablecrosspartition",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "POST is used to create a document. To execute a SQL query, set the\n`x-ms-documentdb-isquery` header to `true` and send a query body.\n"
+        },
+        {
+          "info": {
+            "name": "Get a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/docs/:docId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a document"
+        },
+        {
+          "info": {
+            "name": "Replace a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/docs/:docId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Replace a document"
+        },
+        {
+          "info": {
+            "name": "Delete a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/docs/:docId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete a document"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Stored Procedures",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List stored procedures",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/sprocs",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List stored procedures"
+        },
+        {
+          "info": {
+            "name": "Create a stored procedure",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/sprocs",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a stored procedure"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Triggers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List triggers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/triggers",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List triggers"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "User Defined Functions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List user-defined functions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/udfs",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List user-defined functions"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/users",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List users"
+        },
+        {
+          "info": {
+            "name": "Create a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/users",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a user"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Permissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List permissions for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/users/:userId/permissions",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List permissions for a user"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Offers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List throughput offers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/offers",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List throughput offers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
