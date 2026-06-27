@@ -78,7 +78,7 @@ common:
     url: https://learn.microsoft.com/en-us/azure/cosmos-db/
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/cosmos-db/
-  - type: SignUp
+  - type: Signup
     url: https://azure.microsoft.com/en-us/free/cosmos-db/
 maintainers:
   - FN: Kin Lane
