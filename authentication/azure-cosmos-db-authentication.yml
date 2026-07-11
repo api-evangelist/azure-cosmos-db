@@ -1,0 +1,31 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/azure-cosmos-db-openapi.yml
+summary:
+  types:
+  - apiKey
+  - oauth2
+  api_key_in:
+  - header
+  oauth2_flows:
+  - clientCredentials
+schemes:
+- name: cosmosAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: |-
+    Cosmos DB master-key or resource-token HMAC signature. Format:
+    `type=master&ver=1.0&sig=<base64-hmac-sha256>` (URL-encoded).
+    See https://learn.microsoft.com/en-us/rest/api/cosmos-db/access-control-on-cosmosdb-resources
+  sources:
+  - openapi/azure-cosmos-db-openapi.yml
+- name: entra
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+    scopes: 1
+  description: Microsoft Entra ID OAuth 2.0 bearer token
+  sources:
+  - openapi/azure-cosmos-db-openapi.yml

@@ -68,6 +68,12 @@ apis:
         url: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
 
 common:
+  - type: VulnerabilityDisclosure
+    url: security/azure-cosmos-db-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/azure-cosmos-db-domain-security.yml
+  - type: Authentication
+    url: authentication/azure-cosmos-db-authentication.yml
   - type: OAuthScopes
     url: scopes/azure-cosmos-db-scopes.yml
   - type: GitHubOrganization
