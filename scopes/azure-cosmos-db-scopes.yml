@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/azure-cosmos-db-openapi.yml
+schemes:
+- name: entra
+  source: openapi/azure-cosmos-db-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+  description: Microsoft Entra ID OAuth 2.0 bearer token
+scopes:
+- scope: https://cosmos.azure.com/.default
+  description: Cosmos DB data plane access
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/azure-cosmos-db-openapi.yml

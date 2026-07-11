@@ -68,6 +68,8 @@ apis:
         url: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
 
 common:
+  - type: OAuthScopes
+    url: scopes/azure-cosmos-db-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/AzureCosmosDB
   - type: LinkedIn
@@ -80,6 +82,8 @@ common:
     url: https://azure.microsoft.com/en-us/pricing/details/cosmos-db/
   - type: Signup
     url: https://azure.microsoft.com/en-us/free/cosmos-db/
+  - url: https://azure.microsoft.com/en-us/blog/feed/atom/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
