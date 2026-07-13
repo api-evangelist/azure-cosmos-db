@@ -1,0 +1,14 @@
+{
+  "repo": "azure-cosmos-db",
+  "feeds": [
+    {
+      "source": "https://azure.microsoft.com/en-us/blog/feed/atom/",
+      "feed_url": "https://azure.microsoft.com/en-us/blog/feed/atom/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 13
+}
