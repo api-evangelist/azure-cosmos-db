@@ -68,6 +68,8 @@ apis:
         url: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/azure-cosmos-db-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/azure-cosmos-db-vulnerability-disclosure.yml
   - type: DomainSecurity
