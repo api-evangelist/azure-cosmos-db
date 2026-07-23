@@ -1,0 +1,73 @@
+openapi: 3.1.0
+info:
+  title: Azure Cosmos DB Data Plane REST Collections User Defined Functions API
+  version: '2018-12-31'
+  description: 'Data-plane REST API for Azure Cosmos DB (SQL/Core API). Requests are sent to the
+
+    per-account endpoint `https://{databaseaccount}.documents.azure.com` and authorized
+
+    with a master key or resource token using HMAC-signed `Authorization` headers, or
+
+    with a Microsoft Entra ID bearer token. The `x-ms-version` header selects the API
+
+    version; the latest known version is used when omitted.
+
+    '
+  contact:
+    name: Azure Cosmos DB REST API
+    url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+servers:
+- url: https://{databaseaccount}.documents.azure.com
+  description: Cosmos DB account endpoint
+  variables:
+    databaseaccount:
+      default: my-account
+      description: Your Cosmos DB account name
+tags:
+- name: User Defined Functions
+  description: UDFs
+paths:
+  /dbs/{dbId}/colls/{collId}/udfs:
+    parameters:
+    - in: path
+      name: dbId
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: collId
+      required: true
+      schema:
+        type: string
+    get:
+      summary: List user-defined functions
+      operationId: listUDFs
+      tags:
+      - User Defined Functions
+      responses:
+        '200':
+          description: UDFs
+      security:
+      - cosmosAuth: []
+      - entra: []
+components:
+  securitySchemes:
+    cosmosAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Cosmos DB master-key or resource-token HMAC signature. Format:
+
+        `type=master&ver=1.0&sig=<base64-hmac-sha256>` (URL-encoded).
+
+        See https://learn.microsoft.com/en-us/rest/api/cosmos-db/access-control-on-cosmosdb-resources
+
+        '
+    entra:
+      type: oauth2
+      description: Microsoft Entra ID OAuth 2.0 bearer token
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://cosmos.azure.com/.default: Cosmos DB data plane access
