@@ -11,7 +11,19 @@ description: >-
   authentication, alongside the Cosmos DB Resource Provider (Azure Resource
   Manager) using Microsoft Entra ID OAuth 2.0.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/azure-cosmos-db.png
 tags:
   - Database
   - NoSQL
@@ -26,47 +38,135 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: azure-cosmos-db:data-plane-api
-    name: Azure Cosmos DB Data Plane REST API
-    description: >-
-      REST API for creating, querying, and managing databases, containers,
-      items, stored procedures, triggers, user-defined functions, users, and
-      permissions. Authentication uses master keys, resource tokens, or
-      Microsoft Entra ID bearer tokens with HMAC-signed authorization
-      headers.
-    humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
-    baseURL: https://{databaseaccount}.documents.azure.com
-    tags:
-      - Cosmos DB
-      - NoSQL
-      - SQL API
-      - Documents
-      - Azure
-    properties:
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
-      - type: Access Control
-        url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/access-control-on-cosmosdb-resources
-      - type: Resource URI Syntax
-        url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/cosmosdb-resource-uri-syntax-for-rest
-  - aid: azure-cosmos-db:resource-provider-api
-    name: Azure Cosmos DB Resource Provider API
-    description: >-
-      Azure Resource Manager REST API for managing Cosmos DB accounts,
-      databases, containers, throughput, backups, and role-based access at
-      the control-plane level. Authentication uses Microsoft Entra ID
-      OAuth 2.0 bearer tokens.
-    humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
-    baseURL: https://management.azure.com
-    tags:
-      - Cosmos DB
-      - Control Plane
-      - Resource Manager
-      - Azure
-    properties:
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
-
+- aid: azure-cosmos-db:data-plane-api
+  name: Azure Cosmos DB Data Plane REST API
+  description: >-
+    REST API for creating, querying, and managing databases, containers, items, stored procedures, triggers,
+    user-defined functions, users, and permissions. Authentication uses master keys, resource tokens,
+    or Microsoft Entra ID bearer tokens with HMAC-signed authorization headers.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{databaseaccount}.documents.azure.com
+  tags:
+  - Cosmos DB
+  - NoSQL
+  - SQL API
+  - Documents
+  - Azure
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  - type: Access Control
+    url: >-
+      https://learn.microsoft.com/en-us/rest/api/cosmos-db/access-control-on-cosmosdb-resources
+  - type: Resource URI Syntax
+    url: >-
+      https://learn.microsoft.com/en-us/rest/api/cosmos-db/cosmosdb-resource-uri-syntax-for-rest
+- aid: azure-cosmos-db:resource-provider-api
+  name: Azure Cosmos DB Resource Provider API
+  description: >-
+    Azure Resource Manager REST API for managing Cosmos DB accounts, databases, containers, throughput,
+    backups, and role-based access at the control-plane level. Authentication uses Microsoft Entra ID
+    OAuth 2.0 bearer tokens.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
+  baseURL: https://management.azure.com
+  tags:
+  - Cosmos DB
+  - Control Plane
+  - Resource Manager
+  - Azure
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
+- aid: azure-cosmos-db:azure-cosmos-db-collections-api
+  name: Azure Cosmos DB Collections API
+  description: Document collections (containers)
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{databaseaccount}.documents.azure.com
+  tags:
+  - Collections
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-collections-api-openapi.yml
+- aid: azure-cosmos-db:azure-cosmos-db-databases-api
+  name: Azure Cosmos DB Databases API
+  description: Database resources
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{databaseaccount}.documents.azure.com
+  tags:
+  - Databases
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-databases-api-openapi.yml
+- aid: azure-cosmos-db:azure-cosmos-db-documents-api
+  name: Azure Cosmos DB Documents API
+  description: Document items
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{databaseaccount}.documents.azure.com
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-documents-api-openapi.yml
+- aid: azure-cosmos-db:azure-cosmos-db-offers-api
+  name: Azure Cosmos DB Offers API
+  description: Throughput offers
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{databaseaccount}.documents.azure.com
+  tags:
+  - Offers
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-offers-api-openapi.yml
+- aid: azure-cosmos-db:azure-cosmos-db-permissions-api
+  name: Azure Cosmos DB Permissions API
+  description: Permissions
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{databaseaccount}.documents.azure.com
+  tags:
+  - Permissions
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-permissions-api-openapi.yml
+- aid: azure-cosmos-db:azure-cosmos-db-stored-procedures-api
+  name: Azure Cosmos DB Stored Procedures API
+  description: Stored procedures
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{databaseaccount}.documents.azure.com
+  tags:
+  - Stored Procedures
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-stored-procedures-api-openapi.yml
+- aid: azure-cosmos-db:azure-cosmos-db-triggers-api
+  name: Azure Cosmos DB Triggers API
+  description: Triggers
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{databaseaccount}.documents.azure.com
+  tags:
+  - Triggers
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-triggers-api-openapi.yml
+- aid: azure-cosmos-db:azure-cosmos-db-user-defined-functions-api
+  name: Azure Cosmos DB User Defined Functions API
+  description: UDFs
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{databaseaccount}.documents.azure.com
+  tags:
+  - User Defined Functions
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-user-defined-functions-api-openapi.yml
+- aid: azure-cosmos-db:azure-cosmos-db-users-api
+  name: Azure Cosmos DB Users API
+  description: Users
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{databaseaccount}.documents.azure.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-users-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/azure-cosmos-db-agentic-access.yml
