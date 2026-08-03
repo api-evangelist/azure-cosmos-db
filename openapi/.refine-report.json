@@ -1,0 +1,30 @@
+{
+  "provider": "azure-cosmos-db",
+  "sources": [
+    "azure-cosmos-db-collections-api-openapi.yml",
+    "azure-cosmos-db-databases-api-openapi.yml",
+    "azure-cosmos-db-documents-api-openapi.yml",
+    "azure-cosmos-db-offers-api-openapi.yml",
+    "azure-cosmos-db-permissions-api-openapi.yml",
+    "azure-cosmos-db-stored-procedures-api-openapi.yml",
+    "azure-cosmos-db-triggers-api-openapi.yml",
+    "azure-cosmos-db-user-defined-functions-api-openapi.yml",
+    "azure-cosmos-db-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "azure-cosmos-db-collections-api-openapi.yml",
+    "azure-cosmos-db-databases-api-openapi.yml",
+    "azure-cosmos-db-documents-api-openapi.yml",
+    "azure-cosmos-db-offers-api-openapi.yml",
+    "azure-cosmos-db-permissions-api-openapi.yml",
+    "azure-cosmos-db-stored-procedures-api-openapi.yml",
+    "azure-cosmos-db-triggers-api-openapi.yml",
+    "azure-cosmos-db-user-defined-functions-api-openapi.yml",
+    "azure-cosmos-db-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

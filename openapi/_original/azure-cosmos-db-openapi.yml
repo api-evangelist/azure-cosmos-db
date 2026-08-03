@@ -1,0 +1,372 @@
+openapi: 3.1.0
+info:
+  title: Azure Cosmos DB Data Plane REST API
+  version: '2018-12-31'
+  description: |
+    Data-plane REST API for Azure Cosmos DB (SQL/Core API). Requests are sent to the
+    per-account endpoint `https://{databaseaccount}.documents.azure.com` and authorized
+    with a master key or resource token using HMAC-signed `Authorization` headers, or
+    with a Microsoft Entra ID bearer token. The `x-ms-version` header selects the API
+    version; the latest known version is used when omitted.
+  contact:
+    name: Azure Cosmos DB REST API
+    url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+servers:
+  - url: https://{databaseaccount}.documents.azure.com
+    description: Cosmos DB account endpoint
+    variables:
+      databaseaccount:
+        default: my-account
+        description: Your Cosmos DB account name
+tags:
+  - name: Databases
+    description: Database resources
+  - name: Collections
+    description: Document collections (containers)
+  - name: Documents
+    description: Document items
+  - name: Stored Procedures
+    description: Stored procedures
+  - name: User Defined Functions
+    description: UDFs
+  - name: Triggers
+    description: Triggers
+  - name: Users
+    description: Users
+  - name: Permissions
+    description: Permissions
+  - name: Offers
+    description: Throughput offers
+paths:
+  /dbs:
+    get:
+      summary: List databases
+      operationId: listDatabases
+      tags: [Databases]
+      responses:
+        '200':
+          description: Databases
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Databases:
+                    type: array
+                    items: { type: object }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+    post:
+      summary: Create a database
+      operationId: createDatabase
+      tags: [Databases]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [id]
+              properties:
+                id: { type: string }
+      responses:
+        '201':
+          description: Database created
+          content:
+            application/json:
+              schema: { type: object }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+  /dbs/{dbId}:
+    parameters:
+      - { in: path, name: dbId, required: true, schema: { type: string } }
+    get:
+      summary: Get a database
+      operationId: getDatabase
+      tags: [Databases]
+      responses:
+        '200':
+          description: Database
+          content:
+            application/json:
+              schema: { type: object }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+    delete:
+      summary: Delete a database
+      operationId: deleteDatabase
+      tags: [Databases]
+      responses:
+        '204': { description: Deleted }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+  /dbs/{dbId}/colls:
+    parameters:
+      - { in: path, name: dbId, required: true, schema: { type: string } }
+    get:
+      summary: List collections in a database
+      operationId: listCollections
+      tags: [Collections]
+      responses:
+        '200':
+          description: Collections
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  DocumentCollections:
+                    type: array
+                    items: { type: object }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+    post:
+      summary: Create a collection
+      operationId: createCollection
+      tags: [Collections]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [id]
+              properties:
+                id: { type: string }
+                partitionKey: { type: object }
+                indexingPolicy: { type: object }
+      responses:
+        '201':
+          description: Collection created
+          content:
+            application/json:
+              schema: { type: object }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+  /dbs/{dbId}/colls/{collId}:
+    parameters:
+      - { in: path, name: dbId, required: true, schema: { type: string } }
+      - { in: path, name: collId, required: true, schema: { type: string } }
+    get:
+      summary: Get a collection
+      operationId: getCollection
+      tags: [Collections]
+      responses:
+        '200':
+          description: Collection
+          content:
+            application/json:
+              schema: { type: object }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+    delete:
+      summary: Delete a collection
+      operationId: deleteCollection
+      tags: [Collections]
+      responses:
+        '204': { description: Deleted }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+  /dbs/{dbId}/colls/{collId}/docs:
+    parameters:
+      - { in: path, name: dbId, required: true, schema: { type: string } }
+      - { in: path, name: collId, required: true, schema: { type: string } }
+    get:
+      summary: List documents in a collection
+      operationId: listDocuments
+      tags: [Documents]
+      responses:
+        '200':
+          description: Documents
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Documents:
+                    type: array
+                    items: { type: object }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+    post:
+      summary: Create or query a document
+      description: |
+        POST is used to create a document. To execute a SQL query, set the
+        `x-ms-documentdb-isquery` header to `true` and send a query body.
+      operationId: createOrQueryDocument
+      tags: [Documents]
+      parameters:
+        - { in: header, name: x-ms-documentdb-isquery, schema: { type: string }, description: Set to "true" when issuing a query }
+        - { in: header, name: x-ms-documentdb-query-enablecrosspartition, schema: { type: string } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+          application/query+json:
+            schema:
+              type: object
+              required: [query]
+              properties:
+                query: { type: string }
+                parameters:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name: { type: string }
+                      value: {}
+      responses:
+        '200':
+          description: Query results
+        '201':
+          description: Document created
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+  /dbs/{dbId}/colls/{collId}/docs/{docId}:
+    parameters:
+      - { in: path, name: dbId, required: true, schema: { type: string } }
+      - { in: path, name: collId, required: true, schema: { type: string } }
+      - { in: path, name: docId, required: true, schema: { type: string } }
+    get:
+      summary: Get a document
+      operationId: getDocument
+      tags: [Documents]
+      responses:
+        '200':
+          description: Document
+          content:
+            application/json:
+              schema: { type: object }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+    put:
+      summary: Replace a document
+      operationId: replaceDocument
+      tags: [Documents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        '200':
+          description: Replaced
+          content:
+            application/json:
+              schema: { type: object }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+    delete:
+      summary: Delete a document
+      operationId: deleteDocument
+      tags: [Documents]
+      responses:
+        '204': { description: Deleted }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+  /dbs/{dbId}/colls/{collId}/sprocs:
+    parameters:
+      - { in: path, name: dbId, required: true, schema: { type: string } }
+      - { in: path, name: collId, required: true, schema: { type: string } }
+    get:
+      summary: List stored procedures
+      operationId: listStoredProcedures
+      tags: [Stored Procedures]
+      responses:
+        '200':
+          description: Stored procedures
+          content:
+            application/json:
+              schema: { type: object }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+    post:
+      summary: Create a stored procedure
+      operationId: createStoredProcedure
+      tags: [Stored Procedures]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [id, body]
+              properties:
+                id: { type: string }
+                body: { type: string }
+      responses:
+        '201':
+          description: Stored procedure created
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+  /dbs/{dbId}/colls/{collId}/triggers:
+    parameters:
+      - { in: path, name: dbId, required: true, schema: { type: string } }
+      - { in: path, name: collId, required: true, schema: { type: string } }
+    get:
+      summary: List triggers
+      operationId: listTriggers
+      tags: [Triggers]
+      responses:
+        '200': { description: Triggers }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+  /dbs/{dbId}/colls/{collId}/udfs:
+    parameters:
+      - { in: path, name: dbId, required: true, schema: { type: string } }
+      - { in: path, name: collId, required: true, schema: { type: string } }
+    get:
+      summary: List user-defined functions
+      operationId: listUDFs
+      tags: [User Defined Functions]
+      responses:
+        '200': { description: UDFs }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+  /dbs/{dbId}/users:
+    parameters:
+      - { in: path, name: dbId, required: true, schema: { type: string } }
+    get:
+      summary: List users
+      operationId: listUsers
+      tags: [Users]
+      responses:
+        '200': { description: Users }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+    post:
+      summary: Create a user
+      operationId: createUser
+      tags: [Users]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [id]
+              properties:
+                id: { type: string }
+      responses:
+        '201': { description: Created }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+  /dbs/{dbId}/users/{userId}/permissions:
+    parameters:
+      - { in: path, name: dbId, required: true, schema: { type: string } }
+      - { in: path, name: userId, required: true, schema: { type: string } }
+    get:
+      summary: List permissions for a user
+      operationId: listPermissions
+      tags: [Permissions]
+      responses:
+        '200': { description: Permissions }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+  /offers:
+    get:
+      summary: List throughput offers
+      operationId: listOffers
+      tags: [Offers]
+      responses:
+        '200': { description: Offers }
+      security: [{ cosmosAuth: [] }, { entra: [] }]
+components:
+  securitySchemes:
+    cosmosAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: |
+        Cosmos DB master-key or resource-token HMAC signature. Format:
+        `type=master&ver=1.0&sig=<base64-hmac-sha256>` (URL-encoded).
+        See https://learn.microsoft.com/en-us/rest/api/cosmos-db/access-control-on-cosmosdb-resources
+    entra:
+      type: oauth2
+      description: Microsoft Entra ID OAuth 2.0 bearer token
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://cosmos.azure.com/.default: Cosmos DB data plane access
