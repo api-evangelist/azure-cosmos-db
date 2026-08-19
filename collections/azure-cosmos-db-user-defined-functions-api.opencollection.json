@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Cosmos DB Data Plane REST Collections User Defined Functions API",
+    "version": "2018-12-31"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User Defined Functions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List user-defined functions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/udfs",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List user-defined functions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

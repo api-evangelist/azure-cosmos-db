@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Cosmos DB Data Plane REST Collections Permissions API",
+    "version": "2018-12-31"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Permissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List permissions for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/users/:userId/permissions",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List permissions for a user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

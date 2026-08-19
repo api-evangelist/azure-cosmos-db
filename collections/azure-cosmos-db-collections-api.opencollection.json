@@ -1,0 +1,128 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Cosmos DB Data Plane REST Collections API",
+    "version": "2018-12-31"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List collections in a database",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List collections in a database"
+        },
+        {
+          "info": {
+            "name": "Create a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a collection"
+        },
+        {
+          "info": {
+            "name": "Get a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a collection"
+        },
+        {
+          "info": {
+            "name": "Delete a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete a collection"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

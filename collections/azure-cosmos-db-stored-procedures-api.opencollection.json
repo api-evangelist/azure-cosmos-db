@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Cosmos DB Data Plane REST Collections Stored Procedures API",
+    "version": "2018-12-31"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stored Procedures",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List stored procedures",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/sprocs",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List stored procedures"
+        },
+        {
+          "info": {
+            "name": "Create a stored procedure",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/sprocs",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a stored procedure"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

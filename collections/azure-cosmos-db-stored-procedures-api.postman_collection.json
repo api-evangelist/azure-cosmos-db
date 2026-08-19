@@ -1,0 +1,336 @@
+{
+  "item": [
+    {
+      "id": "57ce75c5-2db9-43d9-9c6a-ccf6faa109d9",
+      "name": "Stored Procedures",
+      "description": {
+        "content": "Stored procedures",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "04918d0d-cde3-4856-ba89-ea4de271794a",
+          "name": "List stored procedures",
+          "request": {
+            "name": "List stored procedures",
+            "description": {},
+            "url": {
+              "path": [
+                "dbs",
+                ":dbId",
+                "colls",
+                ":collId",
+                "sprocs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dbId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "collId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Cosmos DB account name",
+                  "type": "any",
+                  "value": "{{databaseaccount}}",
+                  "key": "databaseaccount"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "928dee4e-9276-442d-b962-efddb43260b3",
+              "name": "Stored procedures",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dbs",
+                    ":dbId",
+                    "colls",
+                    ":collId",
+                    "sprocs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dbId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "collId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Cosmos DB account name",
+                      "type": "any",
+                      "value": "{{databaseaccount}}",
+                      "key": "databaseaccount"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6aa35732-7b50-4441-b1b8-809e5e3b7f92",
+          "name": "Create a stored procedure",
+          "request": {
+            "name": "Create a stored procedure",
+            "description": {},
+            "url": {
+              "path": [
+                "dbs",
+                ":dbId",
+                "colls",
+                ":collId",
+                "sprocs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dbId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "collId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Cosmos DB account name",
+                  "type": "any",
+                  "value": "{{databaseaccount}}",
+                  "key": "databaseaccount"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"body\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7323a680-5426-4b5b-b800-d1412692ad49",
+              "name": "Stored procedure created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dbs",
+                    ":dbId",
+                    "colls",
+                    ":collId",
+                    "sprocs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dbId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "collId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Cosmos DB account name",
+                      "type": "any",
+                      "value": "{{databaseaccount}}",
+                      "key": "databaseaccount"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"body\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Cosmos DB account name",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "my-account",
+      "key": "databaseaccount"
+    },
+    {
+      "type": "string",
+      "value": "https://{{databaseaccount}}.documents.azure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "844a5648-efbf-4adf-b777-dcb7af8d5913",
+    "name": "Azure Cosmos DB Data Plane REST Collections Stored Procedures API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Data-plane REST API for Azure Cosmos DB (SQL/Core API). Requests are sent to the\nper-account endpoint `https://{databaseaccount}.documents.azure.com` and authorized\nwith a master key or resource token using HMAC-signed `Authorization` headers, or\nwith a Microsoft Entra ID bearer token. The `x-ms-version` header selects the API\nversion; the latest known version is used when omitted.\n\n\nContact Support:\n Name: Azure Cosmos DB REST API",
+      "type": "text/plain"
+    }
+  }
+}

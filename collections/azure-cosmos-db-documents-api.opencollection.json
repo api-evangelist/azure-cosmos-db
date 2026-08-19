@@ -1,0 +1,196 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Cosmos DB Data Plane REST Collections Documents API",
+    "version": "2018-12-31"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List documents in a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/docs",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List documents in a collection"
+        },
+        {
+          "info": {
+            "name": "Create or query a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/docs",
+            "headers": [
+              {
+                "name": "x-ms-documentdb-isquery",
+                "value": ""
+              },
+              {
+                "name": "x-ms-documentdb-query-enablecrosspartition",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "POST is used to create a document. To execute a SQL query, set the\n`x-ms-documentdb-isquery` header to `true` and send a query body.\n"
+        },
+        {
+          "info": {
+            "name": "Get a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/docs/:docId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a document"
+        },
+        {
+          "info": {
+            "name": "Replace a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/docs/:docId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Replace a document"
+        },
+        {
+          "info": {
+            "name": "Delete a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{databaseaccount}.documents.azure.com/dbs/:dbId/colls/:collId/docs/:docId",
+            "params": [
+              {
+                "name": "dbId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete a document"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

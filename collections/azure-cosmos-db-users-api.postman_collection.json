@@ -1,0 +1,290 @@
+{
+  "item": [
+    {
+      "id": "d28cdad3-a584-48b7-afe5-0914f4361658",
+      "name": "Users",
+      "description": {
+        "content": "Users",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "477e471a-fc68-446b-9b02-e5efc084cf45",
+          "name": "List users",
+          "request": {
+            "name": "List users",
+            "description": {},
+            "url": {
+              "path": [
+                "dbs",
+                ":dbId",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dbId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Cosmos DB account name",
+                  "type": "any",
+                  "value": "{{databaseaccount}}",
+                  "key": "databaseaccount"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1b480ed5-e562-4253-9311-087a3bd23651",
+              "name": "Users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dbs",
+                    ":dbId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dbId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Cosmos DB account name",
+                      "type": "any",
+                      "value": "{{databaseaccount}}",
+                      "key": "databaseaccount"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d95598e-91fc-4018-a3ad-2fc0ac8d69f4",
+          "name": "Create a user",
+          "request": {
+            "name": "Create a user",
+            "description": {},
+            "url": {
+              "path": [
+                "dbs",
+                ":dbId",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dbId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Cosmos DB account name",
+                  "type": "any",
+                  "value": "{{databaseaccount}}",
+                  "key": "databaseaccount"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8db0eb2b-ca7a-4bd4-8f36-910f87402355",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dbs",
+                    ":dbId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dbId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Cosmos DB account name",
+                      "type": "any",
+                      "value": "{{databaseaccount}}",
+                      "key": "databaseaccount"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Cosmos DB account name",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "my-account",
+      "key": "databaseaccount"
+    },
+    {
+      "type": "string",
+      "value": "https://{{databaseaccount}}.documents.azure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4aaafcdf-0eeb-44c1-8cb0-4c38e4abebff",
+    "name": "Azure Cosmos DB Data Plane REST Collections Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Data-plane REST API for Azure Cosmos DB (SQL/Core API). Requests are sent to the\nper-account endpoint `https://{databaseaccount}.documents.azure.com` and authorized\nwith a master key or resource token using HMAC-signed `Authorization` headers, or\nwith a Microsoft Entra ID bearer token. The `x-ms-version` header selects the API\nversion; the latest known version is used when omitted.\n\n\nContact Support:\n Name: Azure Cosmos DB REST API",
+      "type": "text/plain"
+    }
+  }
+}
