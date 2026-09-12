@@ -1,15 +1,6 @@
 aid: azure-cosmos-db
 name: Azure Cosmos DB
-description: >-
-  Azure Cosmos DB is a fully managed, globally distributed, multi-model NoSQL
-  and relational database service from Microsoft Azure that supports document,
-  key-value, graph, column-family, and vector data models with turnkey global
-  distribution, elastic scale, and SLA-backed latency, throughput,
-  consistency, and availability. The Cosmos DB REST API exposes CRUD and
-  query operations on databases, containers, items, stored procedures,
-  triggers, and user-defined functions using master-key or resource-token
-  authentication, alongside the Cosmos DB Resource Provider (Azure Resource
-  Manager) using Microsoft Entra ID OAuth 2.0.
+description: Azure Cosmos DB is a fully managed, globally distributed, multi-model NoSQL and relational database service from Microsoft Azure that supports document, key-value, graph, column-family, and vector data models with turnkey global distribution, elastic scale, and SLA-backed latency, throughput, consistency, and availability. The Cosmos DB REST API exposes CRUD and query operations on databases, containers, items, stored procedures, triggers, and user-defined functions using master-key or resource-token authentication, alongside the Cosmos DB Resource Provider (Azure Resource Manager) using Microsoft Entra ID OAuth 2.0.
 type: Index
 deliveryModel:
   model: saas
@@ -37,25 +28,21 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/azure-cosmos-db.png
 tags:
-  - Database
-  - NoSQL
-  - Document Database
-  - Vector Database
-  - Globally Distributed
-  - Cloud
-  - Azure
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/azure-cosmos-db/refs/heads/main/apis.yml
+- Database
+- NoSQL
+- Document Database
+- Vector Database
+- Globally Distributed
+- Cloud
+- Azure
+url: https://raw.githubusercontent.com/api-evangelist/azure-cosmos-db/refs/heads/main/apis.yml
 created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.23'
 apis:
 - aid: azure-cosmos-db:data-plane-api
   name: Azure Cosmos DB Data Plane REST API
-  description: >-
-    REST API for creating, querying, and managing databases, containers, items, stored procedures, triggers,
-    user-defined functions, users, and permissions. Authentication uses master keys, resource tokens,
-    or Microsoft Entra ID bearer tokens with HMAC-signed authorization headers.
+  description: REST API for creating, querying, and managing databases, containers, items, stored procedures, triggers, user-defined functions, users, and permissions. Authentication uses master keys, resource tokens, or Microsoft Entra ID bearer tokens with HMAC-signed authorization headers.
   humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
   baseURL: https://{databaseaccount}.documents.azure.com
   tags:
@@ -68,17 +55,12 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
   - type: Access Control
-    url: >-
-      https://learn.microsoft.com/en-us/rest/api/cosmos-db/access-control-on-cosmosdb-resources
+    url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/access-control-on-cosmosdb-resources
   - type: Resource URI Syntax
-    url: >-
-      https://learn.microsoft.com/en-us/rest/api/cosmos-db/cosmosdb-resource-uri-syntax-for-rest
+    url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/cosmosdb-resource-uri-syntax-for-rest
 - aid: azure-cosmos-db:resource-provider-api
   name: Azure Cosmos DB Resource Provider API
-  description: >-
-    Azure Resource Manager REST API for managing Cosmos DB accounts, databases, containers, throughput,
-    backups, and role-based access at the control-plane level. Authentication uses Microsoft Entra ID
-    OAuth 2.0 bearer tokens.
+  description: Azure Resource Manager REST API for managing Cosmos DB accounts, databases, containers, throughput, backups, and role-based access at the control-plane level. Authentication uses Microsoft Entra ID OAuth 2.0 bearer tokens.
   humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
   baseURL: https://management.azure.com
   tags:
@@ -183,33 +165,79 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/azure-cosmos-db-users-api-openapi.yml
-common:
-  - type: AgenticAccess
-    url: agentic-access/azure-cosmos-db-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/azure-cosmos-db-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/azure-cosmos-db-domain-security.yml
-  - type: Authentication
-    url: authentication/azure-cosmos-db-authentication.yml
-  - type: OAuthScopes
-    url: scopes/azure-cosmos-db-scopes.yml
-  - type: GitHubOrganization
-    url: https://github.com/AzureCosmosDB
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/azure-cosmos-db
-  - type: Website
-    url: https://azure.microsoft.com/en-us/products/cosmos-db/
+- aid: microsoft-azure-cosmos-db:microsoft-azure-cosmos-db-collections-api
+  name: microsoft-azure-cosmos-db Collections API
+  description: Collections operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{account}.documents.azure.com/
+  tags:
+  - Collection
+  tags_raw:
+  - Collections
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-collections-api-openapi.yml
   - type: Documentation
-    url: https://learn.microsoft.com/en-us/azure/cosmos-db/
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/cosmos-db/
-  - type: Signup
-    url: https://azure.microsoft.com/en-us/free/cosmos-db/
-  - url: https://azure.microsoft.com/en-us/blog/feed/atom/
-    type: Blog
+    url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+- aid: microsoft-azure-cosmos-db:microsoft-azure-cosmos-db-databases-api
+  name: microsoft-azure-cosmos-db Databases API
+  description: Databases operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{account}.documents.azure.com/
+  tags:
+  - Databases
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-databases-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+- aid: microsoft-azure-cosmos-db:microsoft-azure-cosmos-db-documents-api
+  name: microsoft-azure-cosmos-db Documents API
+  description: Documents operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  baseURL: https://{account}.documents.azure.com/
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-cosmos-db-documents-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+common:
+- type: Portal
+  url: https://portal.azure.com/
+- type: TermsOfService
+  url: https://www.microsoft.com/en-us/legal/terms-of-use
+- type: PrivacyPolicy
+  url: https://privacy.microsoft.com/en-us/privacystatement
+- type: Support
+  url: https://support.microsoft.com/
+- type: AgenticAccess
+  url: agentic-access/azure-cosmos-db-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/azure-cosmos-db-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/azure-cosmos-db-domain-security.yml
+- type: Authentication
+  url: authentication/azure-cosmos-db-authentication.yml
+- type: OAuthScopes
+  url: scopes/azure-cosmos-db-scopes.yml
+- type: GitHubOrganization
+  url: https://github.com/AzureCosmosDB
+- type: LinkedIn
+  url: https://www.linkedin.com/company/azure-cosmos-db
+- type: Website
+  url: https://azure.microsoft.com/en-us/products/cosmos-db/
+- type: Documentation
+  url: https://learn.microsoft.com/en-us/azure/cosmos-db/
+- type: Pricing
+  url: https://azure.microsoft.com/en-us/pricing/details/cosmos-db/
+- type: Signup
+  url: https://azure.microsoft.com/en-us/free/cosmos-db/
+- url: https://azure.microsoft.com/en-us/blog/feed/atom/
+  type: Blog
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 x-parent: microsoft-azure
 x-relationship: product
