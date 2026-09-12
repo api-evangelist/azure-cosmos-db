@@ -35,7 +35,7 @@ tags:
 - Globally Distributed
 - Cloud
 - Azure
-url: https://raw.githubusercontent.com/api-evangelist/azure-cosmos-db/refs/heads/main/apis.yml
+url: https://azure.microsoft.com/en-us/products/cosmos-db/
 created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.23'
