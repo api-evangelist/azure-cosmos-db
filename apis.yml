@@ -166,7 +166,7 @@ apis:
   - type: OpenAPI
     url: openapi/azure-cosmos-db-users-api-openapi.yml
 - aid: microsoft-azure-cosmos-db:microsoft-azure-cosmos-db-collections-api
-  name: microsoft-azure-cosmos-db Collections API
+  name: Azure Cosmos DB Collections API
   description: Collections operations
   humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
   baseURL: https://{account}.documents.azure.com/
@@ -180,7 +180,7 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
 - aid: microsoft-azure-cosmos-db:microsoft-azure-cosmos-db-databases-api
-  name: microsoft-azure-cosmos-db Databases API
+  name: Azure Cosmos DB Databases API
   description: Databases operations
   humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
   baseURL: https://{account}.documents.azure.com/
@@ -192,7 +192,7 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
 - aid: microsoft-azure-cosmos-db:microsoft-azure-cosmos-db-documents-api
-  name: microsoft-azure-cosmos-db Documents API
+  name: Azure Cosmos DB Documents API
   description: Documents operations
   humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
   baseURL: https://{account}.documents.azure.com/
