@@ -89,6 +89,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
   baseURL: https://{databaseaccount}.documents.azure.com
   tags:
+  - Database
+  tags_raw:
   - Databases
   properties:
   - type: OpenAPI
@@ -185,6 +187,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
   baseURL: https://{account}.documents.azure.com/
   tags:
+  - Database
+  tags_raw:
   - Databases
   properties:
   - type: OpenAPI
