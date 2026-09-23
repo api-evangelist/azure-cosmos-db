@@ -10,9 +10,7 @@ info:
 
     with a Microsoft Entra ID bearer token. The `x-ms-version` header selects the API
 
-    version; the latest known version is used when omitted.
-
-    '
+    version; the latest known version is used when omitted.'
   contact:
     name: Azure Cosmos DB REST API
     url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
