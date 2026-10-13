@@ -1,0 +1,18 @@
+edges:
+- partner_name: PostgreSQL
+  partner: postgresql
+  partner_match: shape-anchor
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  shape: postgres-wire
+  type: docs
+  degree: declared-unqualified
+  evidence: https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/introduction
+  evidence_kind: own-docs
+  evidence_file: https://github.com/api-evangelist/azure-cosmos-db/blob/main/evidence/compatibility/azure-cosmos-db-postgres-wire-1.md
+  quote: Azure Cosmos DB for PostgreSQL is a managed service for PostgreSQL extended
+  detected_by: sweep-shape-compat.py
+  first_seen: '2026-10-13'
+generated: '2026-10-13'
+method: searched

@@ -1,0 +1,12 @@
+fetched: '2026-10-13'
+method: fetched
+source: https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/introduction
+page: https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/introduction
+file: azure-cosmos-db-postgres-wire-1.md
+bytes: 5132
+sha256: 3f5a1270c77118f2eb9b0e50974c755df5592fd7b301b64d48e9678cfce00a24
+anchor: postgresql
+shape: postgres-wire
+classification: declares-compatibility
+quote: Azure Cosmos DB for PostgreSQL is a managed service for PostgreSQL extended
+note: text extracted from the provider's own page (tags stripped), saved for evidence
