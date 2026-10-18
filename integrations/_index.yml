@@ -49,5 +49,5 @@
     - connectors/databases/cosmos
     vendor_link: https://azure.microsoft.com/en-us/products/cosmos-db/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
