@@ -34,6 +34,14 @@ tags:
 - Vector Database
 - Globally Distributed
 - Cloud
+- Microsoft Azure
+tags_raw:
+- Database
+- NoSQL
+- Document Database
+- Vector Database
+- Globally Distributed
+- Cloud
 - Azure
 url: https://azure.microsoft.com/en-us/products/cosmos-db/
 created: '2026-05-11'
@@ -46,6 +54,12 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
   baseURL: https://{databaseaccount}.documents.azure.com
   tags:
+  - Cosmos DB
+  - NoSQL
+  - SQL API
+  - Documents
+  - Microsoft Azure
+  tags_raw:
   - Cosmos DB
   - NoSQL
   - SQL API
@@ -64,6 +78,11 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/
   baseURL: https://management.azure.com
   tags:
+  - Cosmos DB
+  - Control Plane
+  - Resource Manager
+  - Microsoft Azure
+  tags_raw:
   - Cosmos DB
   - Control Plane
   - Resource Manager
