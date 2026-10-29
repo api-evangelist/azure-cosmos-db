@@ -1,4 +1,4 @@
-# Azure Cosmos DB (azure-cosmos-db)
+# Azure Cosmos DB
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,82 +66,130 @@
 
 Azure Cosmos DB is a fully managed, globally distributed, multi-model NoSQL and relational database service from Microsoft Azure that supports document, key-value, graph, column-family, and vector data models with turnkey global distribution, elastic scale, and SLA-backed latency, throughput, consistency, and availability. The Cosmos DB REST API exposes CRUD and query operations on databases, containers, items, stored procedures, triggers, and user-defined functions using master-key or resource-token authentication, alongside the Cosmos DB Resource Provider (Azure Resource Manager) using Microsoft Entra ID OAuth 2.0.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/azure-cosmos-db/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/azure-cosmos-db/refs/heads/main/apis.yml)
+**Areas:** Database · NoSQL · Document Database · Vector Database · Globally Distributed · Cloud · Microsoft Azure
 
-## Scope
+## Azure Cosmos DB on APIs.io
 
-- **Type:** Index
+Everything profiled for Azure Cosmos DB is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/azure-cosmos-db/](https://apis.io/providers/azure-cosmos-db/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (14)
 
-- Database
-- NoSQL
-- Document Database
-- Vector Database
-- Globally Distributed
-- Cloud
-- Azure
+- [Azure Cosmos DB Data Plane REST API](https://apis.io/apis/azure-cosmos-db/data-plane-api/) — REST API for creating, querying, and managing databases, containers, items, stored procedures, triggers, user-defined functions, users, and permissions.…
+- [Azure Cosmos DB Resource Provider API](https://apis.io/apis/azure-cosmos-db/resource-provider-api/) — Azure Resource Manager REST API for managing Cosmos DB accounts, databases, containers, throughput, backups, and role-based access at the control-plane…
+- [Azure Cosmos DB Collections API](https://apis.io/apis/azure-cosmos-db/azure-cosmos-db-collections-api/) — Document collections (containers)
+- [Azure Cosmos DB Databases API](https://apis.io/apis/azure-cosmos-db/azure-cosmos-db-databases-api/) — Database resources
+- [Azure Cosmos DB Documents API](https://apis.io/apis/azure-cosmos-db/azure-cosmos-db-documents-api/) — Document items
+- [Azure Cosmos DB Offers API](https://apis.io/apis/azure-cosmos-db/azure-cosmos-db-offers-api/) — Throughput offers
+- [Azure Cosmos DB Permissions API](https://apis.io/apis/azure-cosmos-db/azure-cosmos-db-permissions-api/) — Permissions
+- [Azure Cosmos DB Stored Procedures API](https://apis.io/apis/azure-cosmos-db/azure-cosmos-db-stored-procedures-api/) — Stored procedures
+- [Azure Cosmos DB Triggers API](https://apis.io/apis/azure-cosmos-db/azure-cosmos-db-triggers-api/) — Triggers
+- [Azure Cosmos DB User Defined Functions API](https://apis.io/apis/azure-cosmos-db/azure-cosmos-db-user-defined-functions-api/) — UDFs
+- [Azure Cosmos DB Users API](https://apis.io/apis/azure-cosmos-db/azure-cosmos-db-users-api/) — Users
+- [Azure Cosmos DB Collections API](https://apis.io/apis/azure-cosmos-db/microsoft-azure-cosmos-db-collections-api/) — Collections operations
+- [Azure Cosmos DB Databases API](https://apis.io/apis/azure-cosmos-db/microsoft-azure-cosmos-db-databases-api/) — Databases operations
+- [Azure Cosmos DB Documents API](https://apis.io/apis/azure-cosmos-db/microsoft-azure-cosmos-db-documents-api/) — Documents operations
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Azure Cosmos DB Data Plane REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-REST API for creating, querying, and managing databases, containers, items, stored procedures, triggers, user-defined functions, users, and permissions. Authentication uses master keys, resource tokens, or Microsoft Entra ID bearer tokens with HMAC-signed authorization headers.
+- [Azure Cosmos Db Agentic Access](https://apis.io/agentic-access/azure-cosmos-db/azure-cosmos-db-agentic-access/)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/rest/api/cosmos-db/](https://learn.microsoft.com/en-us/rest/api/cosmos-db/)
-- **Base URL:** `https://{databaseaccount}.documents.azure.com`
+#### Collections (10)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Cosmos DB
-- NoSQL
-- SQL API
-- Documents
-- Azure
+- [Azure Cosmos DB Data Plane REST API](https://apis.io/collections/azure-cosmos-db/open-azure-cosmos-db/)
+- [Azure Cosmos DB Data Plane REST Collections API](https://apis.io/collections/azure-cosmos-db/open-azure-cosmos-db-collections-api/)
+- [Azure Cosmos DB Data Plane REST Collections Databases API](https://apis.io/collections/azure-cosmos-db/open-azure-cosmos-db-databases-api/)
+- [Azure Cosmos DB Data Plane REST Collections Documents API](https://apis.io/collections/azure-cosmos-db/open-azure-cosmos-db-documents-api/)
+- [Azure Cosmos DB Data Plane REST Collections Offers API](https://apis.io/collections/azure-cosmos-db/open-azure-cosmos-db-offers-api/)
+- [Azure Cosmos DB Data Plane REST Collections Permissions API](https://apis.io/collections/azure-cosmos-db/open-azure-cosmos-db-permissions-api/)
+- [Azure Cosmos DB Data Plane REST Collections Stored Procedures API](https://apis.io/collections/azure-cosmos-db/open-azure-cosmos-db-stored-procedures-api/)
+- [Azure Cosmos DB Data Plane REST Collections Triggers API](https://apis.io/collections/azure-cosmos-db/open-azure-cosmos-db-triggers-api/)
+- [Azure Cosmos DB Data Plane REST Collections User Defined Functions API](https://apis.io/collections/azure-cosmos-db/open-azure-cosmos-db-user-defined-functions-api/)
+- [Azure Cosmos DB Data Plane REST Collections Users API](https://apis.io/collections/azure-cosmos-db/open-azure-cosmos-db-users-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/cosmos-db/)
-- [Access  Control](https://learn.microsoft.com/en-us/rest/api/cosmos-db/access-control-on-cosmosdb-resources)
-- [Resource  U R I  Syntax](https://learn.microsoft.com/en-us/rest/api/cosmos-db/cosmosdb-resource-uri-syntax-for-rest)
-- [Postman Collection](collections/azure-cosmos-db.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/azure-cosmos-db.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Azure Cosmos DB Resource Provider API
+- [Azure Cosmos Db Authentication](https://apis.io/security/azure-cosmos-db/azure-cosmos-db-authentication/)
+- [Azure Cosmos Db Domain Security](https://apis.io/security/azure-cosmos-db/azure-cosmos-db-domain-security/)
+- [Azure Cosmos Db Vulnerability Disclosure](https://apis.io/security/azure-cosmos-db/azure-cosmos-db-vulnerability-disclosure/)
 
-Azure Resource Manager REST API for managing Cosmos DB accounts, databases, containers, throughput, backups, and role-based access at the control-plane level. Authentication uses Microsoft Entra ID OAuth 2.0 bearer tokens.
+#### OAuth scopes (1)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/](https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/)
-- **Base URL:** `https://management.azure.com`
+The permissions the API asks for.
 
-#### Tags
+- [Azure Cosmos Db Scopes](https://apis.io/scopes/azure-cosmos-db/azure-cosmos-db-scopes/)
 
-- Cosmos DB
-- Control Plane
-- Resource Manager
-- Azure
+## Where to find this API
 
-#### Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/cosmos-db-resource-provider/)
-- [Postman Collection](collections/azure-cosmos-db.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/azure-cosmos-db.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/AzureCosmosDB)
-- [LinkedIn](https://www.linkedin.com/company/azure-cosmos-db)
 - [Website](https://azure.microsoft.com/en-us/products/cosmos-db/)
 - [Documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/)
 - [Pricing](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/)
-- [Sign Up](https://azure.microsoft.com/en-us/free/cosmos-db/)
+- [Support](https://support.microsoft.com/)
+- [Blog](https://azure.microsoft.com/en-us/blog/feed/atom/)
+- [Terms of service](https://www.microsoft.com/en-us/legal/terms-of-use)
+- [Privacy policy](https://privacy.microsoft.com/en-us/privacystatement)
+- [GitHub](https://github.com/AzureCosmosDB)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 37.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 45.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 38.1 |
+| Access clarity | 44.7 |
+
+**Agent readiness 17.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/azure-cosmos-db/](https://apis.io/providers/azure-cosmos-db/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Azure Cosmos DB: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/azure-cosmos-db/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
